@@ -1,0 +1,33 @@
+/***************************\
+         $FUNCTIONS
+\***************************/
+
+/*
+*   Con esta funcion controlamos el valor de z-index
+*   Los valores estan en variables.scss
+*    "modal": 9000,
+*    "over": 900,
+*    "default": 1,
+*    "below": -1,
+*    "bottomless-pit": -9000
+*/
+
+@function z($layer) {
+    @return map-get($z-layers, $layer);
+}
+
+/*
+*   Función para mantener el tamaño de fuente consistente
+*/
+
+@function fs($font-size) {
+    @return map-get($size-vars, $font-size) * 1rem;
+}
+
+/*
+*   Función para usar colores
+*/
+
+@function color($color) {
+    @return map-get($colors-map, $color);
+}

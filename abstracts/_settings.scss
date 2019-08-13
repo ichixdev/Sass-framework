@@ -1,0 +1,249 @@
+/***********************\
+       $VARIABLES
+\***********************/
+
+/**
+ *
+ * Define todas las variables y valores a utilizar
+ *
+ */
+
+/****************************\
+        $BREAKPOINTS
+\****************************/
+
+/**
+* Empezar con la pantalla pequeña primero y luego expandir y usar los breakpoints cuando se vea mal
+*
+* Dejo las medidas en px por si ocurre un problema
+
+*  $breakpoints: ('xs': 576px,
+*    'md': 768px,
+*    'lg': 992px,
+*    'xl': 1200px,
+*  ) !default; 
+*
+*/
+
+$breakpoints: ('xs': 36em,
+    'md': 48em,
+    'lg': 62em,
+    'xl': 75em,
+) !default;
+
+/****************************\
+         $Z INDEX
+\****************************/
+
+/**
+*   Con esto contrloamos los z index
+*   Solo debemos usar la funcion `z($layers)`
+*
+**/
+
+$z-layers: ("modal": 9000,
+    "over": 900,
+    "default": 1,
+    "below": -1,
+    "bottomless-pit": -9000);
+
+/******************************\
+            LAYOUT
+\******************************/
+/**
+*   Valores de diseño constantes, aparte de estos, 
+*   también podemos declarar valores para diferentes tamaños de bloques y más
+*/
+
+$baselineheight: 1.5;
+$gutterwidth: 24px;
+$padding: $gutterwidth;
+$minigutter: $gutterwidth / 2;
+$pagemaxwidth: 1024px;
+$radius: 3px;
+$hovertransition: .3s;
+$animationtime: .8s;
+
+/***************************\
+          $GRID
+\***************************/
+/**
+*   Variables para nuestro grid
+*/
+$gap : $minigutter;
+$grid-size: 12;
+
+
+/********************************\
+           $FONT FACE
+\********************************/
+
+/**
+*   Definición de fuentes
+*
+**/
+
+$basefont : "Helvetica Neue",
+Helvetica,
+Arial,
+sans-serif;
+$altfont : $basefont;
+$codefont : "Courier New",
+monospace;
+$baseheadingfont : $altfont;
+
+$baseheadingfontweight : normal;
+$baseheadingfontcolor : inherit;
+
+$basefontsize: 16;
+
+/**
+*   Tamaños de fuentes
+*   Esta variables se usar para generar clases en utilities.scss
+**/
+
+$size-vars: ("x-small" : .6,
+    "small" : .875,
+    "normal" : 1,
+    "medium": 1.5,
+    "big" : 2,
+    "x-big" : 3,
+    "landing": 5);
+
+/****************************\
+           $COLORS
+\****************************/
+/**
+*   Brand Color
+*/
+$color-brand: #6032d0;
+$color-secondary: #f9f9f9;
+$color-cta: #5727cc;
+
+/**
+*   Escalas de grises
+*   Agregar las que sea necesarias
+*/
+$color-black: rgb(0, 0, 0);
+$color-darkergrey: lighten(black, 10%);
+$color-darkgrey: lighten(black, 20%);
+$color-grey: lighten(black, 30%);
+$color-lightgrey: lighten(black, 75%);
+$color-lightergrey: lighten(black, 95%);
+$color-white: rgb(255, 255, 255);
+
+/**
+*   Colors Map
+*   Tenemos un mapa de colores para crear clases
+*/
+$colors-map: (color-brand: $color-brand,
+    color-secondary: $color-secondary,
+    color-black: $color-black,
+    color-darkergrey: $color-darkergrey,
+    color-darkgrey: $color-darkgrey,
+    color-grey: $color-grey,
+    color-lightgrey: $color-lightgrey,
+    color-lightergrey: $color-lightergrey,
+    color-white: $color-white);
+
+/**
+*   Atmósfera
+*/
+$background: $color-white;
+$headingcolor: lighten(black, 20%);
+$textcolor: lighten(black, 30%);
+$color-border : $color-lightergrey;
+
+/**
+*   Links
+*/
+$linkcolor : color-brand(color-brand);
+$linkcolorhover: $linkcolor;
+$linkcolorvisited : $linkcolor;
+$linkcolorfocus: $linkcolor;
+
+/****************************\
+           TEXTURES
+\****************************/
+/**
+*   Definimos Colores y elementos de popups, mensajes de alerta, etc...
+*/
+
+$color-alert: rgb(252, 228, 207);
+$color-error: rgb(218, 79, 73);
+$color-info: rgb(0, 151, 255);
+$color-success: rgb(80, 184, 60);
+$color-warning: rgb(255, 125, 16);
+
+// Texturas de popups
+$alertbordercolor: darken($color-alert, 20%);
+$alertborderwidth: 1px;
+$alertborderstyle: solid;
+$alerttext: darken($color-alert, 60%);
+
+// Error
+$alerterrorcolor: lighten($color-error, 30%);
+$alerterrorborder: lighten($color-error, 20%);
+$alerterrortext: $color-error;
+
+// Info
+$alertinfocolor: lighten($color-info, 10%);
+$alertinfoborder: darken($color-info, 10%);
+$alertinfotext: darken($color-info, 50%);
+
+
+// Success
+$alertsuccesscolor: lighten($color-success, 30%);
+$alertsuccessborder : lighten($color-success, 20%);
+$alertsuccesstext: darken($color-success, 20%);
+
+// Advertencia
+$alertwarningcolor: lighten($color-warning, 30%);
+$alertwarningborder : lighten($color-warning, 20%);
+$alertwarningtext: darken($color-warning, 20%);
+
+// badges
+$badgebackground : transparent;
+$badgecolor : $textcolor;
+
+// botones
+$buttonbackground : transparent;
+$buttonbordercolor : currentcolor;
+$buttoncolor : $textcolor;
+$buttonborderwidth : 1px;
+$buttonborderstyle : solid;
+
+// boxes (well)
+$wellbackground : red;
+$wellbordercolor : darken($wellbackground, 20%);
+$wellborderwidth : 1px;
+$wellborderstyle : solid;
+$wellshadow : darken($wellbackground, 10%);
+$wellshadowblur : 10px;
+
+// tablas
+$tablebackground : transparent;
+$tablestripe : $color-lightergrey;
+$tablehover : $color-lightergrey;
+$tableborder : $color-grey;
+$tableborderwidth : 1px;
+$tableborderstyle : solid;
+
+// formularios
+$inputbackground : $color-white;
+$inputborder : $color-lightgrey;
+$inputborderwidth : 1px;
+$inputborderstyle : solid;
+$inputhover : lighten($color-black, 50%);
+$inputfocus : $color-brand,
+40%;
+$placeholdercolor : $color-lightergrey;
+
+// Navegación
+$nav-width: 42px;
+$nav-height: $nav-width;
+$nav-icon-size: 16px;
+$nav-color: $color-brand;
+$nav-background: $color-white;
+$nav-borders: lighten($nav-background, 10%);
+$nav-lists-background: $color-brand;

@@ -1,0 +1,36 @@
+/*************************\
+        $UTILITIES
+\*************************/
+/*
+*
+* Selectors repeated constantly
+*/
+
+/*
+*   Clases para cada uno de los tamaños de fuentes. Se pueden ver en Settings.
+*   Son los nombres de las varables con el prefijo font-
+*   Por ejemplo:
+
+        .font-x-small {
+            font-size: .875rem;
+        }
+ */
+
+@each $name,
+$value in $size-vars {
+    .font-#{$name} {
+        font-size: $value * 1rem;
+        line-height: 1.5;
+    }
+}
+
+@each $name,
+$value in $colors-map {
+    .#{$name} {
+        color: $value;
+    }
+
+    .bg-#{$name} {
+        background-color: $value;
+    }
+}

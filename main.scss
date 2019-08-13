@@ -1,0 +1,49 @@
+/**********************\
+         $MAIN
+\**********************/
+
+/**
+*   Abstracts, Funcionalidades de sass, variables, funciones, mixins...
+**/
+@import "abstracts/settings";
+@import "abstracts/mixins";
+@import "abstracts/functions";
+@import "abstracts/placeholders";
+/*Activa esta hoja de estilos para detectar visualmente cualquier anidación impropia.*/
+//@import 'abstracts/debug';
+
+/*
+*   Base
+**/
+@import "base/reset";
+@import "base/figures";
+@import "base/forms";
+@import "base/buttons";
+@import "base/images";
+@import "base/links";
+@import "base/typography";
+@import "base/tables";
+
+/*
+*   Themes
+**/
+
+/*
+*   Layout
+**/
+@import "layout/site";
+@import "layout/textures";
+@import "layout/grid";
+
+/*
+*   Pages
+**/
+
+
+/*
+*   Components
+**/
+
+@import "shame";
+
+@import "components/utilities";

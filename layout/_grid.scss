@@ -1,0 +1,33 @@
+/****************************\
+          $GRIDS
+\****************************/
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat($grid-size, 1fr);
+    grid-gap: $gap;
+    margin: $gap / 2;
+}
+
+[class^="grid-"],
+[class*=" grid-"] {
+    grid-column: span 12;
+    margin: $gap / 2;
+    padding: 5px;
+}
+
+@for $i from 1 to ($grid-size + 1) {
+
+    @each $name,
+    $value in $breakpoints {
+        @include media-breakpoint($name) {
+            .grid-#{$name}-#{$i} {
+                grid-column: span ($i) !important;
+            }
+        }
+    }
+
+    .grid-#{$i} {
+        grid-column: span ($i);
+    }
+}
